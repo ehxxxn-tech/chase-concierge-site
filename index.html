@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#111213" />
+    <title>CHASE Admin | Executive Control Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body>
+    <main class="admin-shell" data-app>
+      <section class="admin-login" data-login-screen>
+        <div class="login-panel">
+          <a class="brand" href="/" aria-label="CHASE public site">CHASE</a>
+          <span class="eyebrow" data-admin-i18n="login.eyebrow">ADMIN ACCESS · PRIVATE CONCIERGE</span>
+          <h1 data-admin-i18n-html="login.title">行政<br />控制中心</h1>
+          <p data-admin-i18n="login.copy">管理會員、詢問、內容與營運數據。此入口將在接入後端後啟用正式驗證與權限控管。</p>
+          <form class="login-form" data-login-form>
+            <label>
+              <span>Email</span>
+              <input type="email" value="admin@chaseconcierge.com" autocomplete="email" />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" value="prestige2026" autocomplete="current-password" />
+            </label>
+            <button type="submit" class="admin-button primary" data-admin-i18n="login.enter">進入後台</button>
+          </form>
+          <small data-admin-i18n="login.notice">目前為前端原型。正式環境需接入後端驗證、Session、MFA 與操作紀錄。</small>
+        </div>
+      </section>
+
+      <section class="admin-app hidden" data-dashboard-screen>
+        <aside class="admin-sidebar">
+          <a class="brand" href="/">CHASE</a>
+          <span class="sidebar-kicker">PRIVATE ADMIN</span>
+          <nav class="admin-nav" data-admin-nav>
+            <button class="active" data-section="dashboard" data-admin-i18n="nav.dashboard">總覽</button>
+            <button data-section="analytics" data-admin-i18n="nav.analytics">數據分析</button>
+            <button data-section="inquiries" data-admin-i18n="nav.inquiries">詢問管理</button>
+            <button data-section="members" data-admin-i18n="nav.members">會員管理</button>
+            <button data-section="cms" data-admin-i18n="nav.cms">內容管理</button>
+            <button data-section="settings" data-admin-i18n="nav.settings">設定</button>
+            <button data-section="roles" data-admin-i18n="nav.roles">權限角色</button>
+          </nav>
+          <div class="sidebar-footer">
+            <span>Signed in as</span>
+            <strong data-current-role>Admin</strong>
+          </div>
+        </aside>
+
+        <div class="admin-main">
+          <header class="admin-topbar">
+            <div>
+              <span class="eyebrow">CHASE · OPERATIONS</span>
+              <h2 data-page-title>總覽</h2>
+            </div>
+            <div class="topbar-actions">
+              <div class="role-select">
+                <span>Role</span>
+                <select data-role-select>
+                  <option>Admin</option>
+                  <option>Manager</option>
+                  <option>Staff</option>
+                </select>
+              </div>
+              <div class="admin-language" data-admin-language><button type="button" class="active" data-admin-lang="zh">中文</button><button type="button" data-admin-lang="en">English</button></div><button class="admin-button ghost" data-lock data-admin-i18n="topbar.lock">鎖定</button>
+            </div>
+          </header>
+
+          <section class="admin-section active" id="dashboard" data-title="Dashboard">
+            <div class="metric-grid" data-metrics></div>
+            <div class="panel-grid two">
+              <article class="panel">
+                <div class="panel-head"><span data-dashboard-traffic>流量總覽</span><strong data-dashboard-period>近 7 日</strong></div>
+                <div class="bar-chart" data-traffic-bars></div>
+              </article>
+              <article class="panel">
+                <div class="panel-head"><span data-dashboard-live>即時狀態</span><strong data-online-summary>18 位在線</strong></div>
+                <div class="status-list">
+                  <div data-live-row="0"><span>禮賓團隊</span><strong>可服務</strong></div>
+                  <div data-live-row="1"><span>詢問佇列</span><strong>6 筆待處理</strong></div>
+                  <div data-live-row="2"><span>會員審核</span><strong>3 位新增</strong></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="admin-section" id="analytics" data-title="Analytics">
+            <div class="panel-grid three" data-analytics></div>
+            <article class="panel wide">
+              <div class="panel-head"><span>POPULAR PAGES</span><strong>Current month</strong></div>
+              <div class="table-wrap">
+                <table data-pages-table></table>
+              </div>
+            </article>
+          </section>
+
+          <section class="admin-section" id="inquiries" data-title="Inquiry Management">
+            <div class="toolbar">
+              <input type="search" placeholder="搜尋姓名、服務、國家..." data-admin-i18n-attr="placeholder:search.placeholder" data-inquiry-search />
+              <select data-inquiry-filter>
+                <option value="all">All status</option>
+                <option value="New">New</option>
+                <option value="In Review">In Review</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Closed">Closed</option>
+              </select>
+            </div>
+            <div class="inquiry-layout">
+              <div class="table-wrap"><table data-inquiry-table></table></div>
+              <article class="panel note-panel">
+                <div class="panel-head"><span data-admin-i18n="notes.title">內部備註</span><strong data-note-name>選擇詢問</strong></div>
+                <textarea data-internal-note placeholder="團隊內部備註..." data-admin-i18n-attr="placeholder:notes.placeholder"></textarea>
+                <button class="admin-button secondary" data-save-note>儲存備註</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="admin-section" id="members" data-title="Member Management">
+            <div class="panel-grid two">
+              <article class="panel">
+                <div class="panel-head"><span>REGISTRATION</span><strong>Member intake</strong></div>
+                <form class="admin-form" data-member-form>
+                  <label><span>Name</span><input placeholder="Member name" /></label>
+                  <label><span>Email</span><input type="email" placeholder="member@example.com" /></label>
+                  <label><span>VIP Status</span><select><option>Prestige</option><option>Candidate</option><option>On Hold</option></select></label>
+                  <button class="admin-button primary" type="submit">Create Member</button>
+                </form>
+              </article>
+              <article class="panel">
+                <div class="panel-head"><span>AUTH WORKFLOWS</span><strong>Planned backend</strong></div>
+                <div class="workflow-list">
+                  <label><input type="checkbox" checked /> Registration</label>
+                  <label><input type="checkbox" checked /> Login</label>
+                  <label><input type="checkbox" /> Email verification</label>
+                  <label><input type="checkbox" /> Password reset</label>
+                  <label><input type="checkbox" checked /> VIP status</label>
+                </div>
+              </article>
+            </div>
+            <div class="table-wrap"><table data-member-table></table></div>
+          </section>
+
+          <section class="admin-section" id="cms" data-title="Content Management">
+            <div class="cms-grid">
+              <article class="panel cms-editor">
+                <div class="panel-head"><span>CMS EDITOR</span><strong>Multilingual content</strong></div>
+                <div class="cms-tabs" data-cms-tabs>
+                  <button class="active" data-cms="homepage">Homepage</button>
+                  <button data-cms="services">Services</button>
+                  <button data-cms="faq">FAQ</button>
+                  <button data-cms="media">Images</button>
+                  <button data-cms="languages">Languages</button>
+                </div>
+                <form class="admin-form stacked" data-cms-form></form>
+              </article>
+              <article class="panel preview-panel">
+                <div class="panel-head"><span>PREVIEW</span><strong>Editorial tone</strong></div>
+                <div class="cms-preview" data-cms-preview></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="admin-section" id="settings" data-title="Settings">
+            <div class="panel-grid two">
+              <article class="panel">
+                <div class="panel-head"><span>COMPANY</span><strong>Identity</strong></div>
+                <form class="admin-form stacked">
+                  <label><span>Company Name</span><input value="CHASE" /></label>
+                  <label><span>Logo Text</span><input value="CHASE" /></label>
+                  <label><span>Email</span><input value="concierge@chaseconcierge.com" /></label>
+                  <label><span>LINE</span><input value="@chase" /></label>
+                </form>
+              </article>
+              <article class="panel">
+                <div class="panel-head"><span>CONTACT & SOCIAL</span><strong>Footer data</strong></div>
+                <form class="admin-form stacked">
+                  <label><span>Telephone</span><input value="+852 3000 0000" /></label>
+                  <label><span>WhatsApp</span><input value="+852 3000 0000" /></label>
+                  <label><span>Instagram</span><input placeholder="instagram.com/chase" /></label>
+                  <label><span>Footer Copy</span><textarea>為極少數人安排的世界。私人禮賓，絕對私密。</textarea></label>
+                </form>
+              </article>
+            </div>
+          </section>
+
+          <section class="admin-section" id="roles" data-title="User Roles">
+            <div class="role-grid" data-role-grid></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="/admin/admin.js"></script>
+  </body>
+</html>
