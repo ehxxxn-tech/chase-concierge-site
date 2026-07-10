@@ -288,11 +288,19 @@ p {
   text-wrap: pretty;
 }
 
+.hero-content .eyebrow {
+  color: rgba(227, 229, 231, 0.92);
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.42);
+}
+
 .hero-content p {
   max-width: 36rem;
   margin-top: 2rem;
-  font-size: 1rem;
-  letter-spacing: 0.025em;
+  color: rgba(227, 229, 231, 0.84);
+  font-size: 1.04rem;
+  letter-spacing: 0.035em;
+  line-height: 1.75;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.46);
 }
 
 .button {
@@ -1281,6 +1289,7 @@ p {
     padding: 0.85rem 0.5rem;
   }
 }
+
 
 
 
