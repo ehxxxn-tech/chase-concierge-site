@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
   <head>
     <meta charset="utf-8" />
@@ -6,19 +6,21 @@
     <meta name="theme-color" content="#1a1a1a" />
     <meta
       name="description"
-      content="CHASE 御天禮賓 - 為極少數人服務的私人禮賓。航空、遊艇與豪華座駕的全方位安排。"
+      content="CHASE禮賓 - 為極少數人服務的私人禮賓。航空、遊艇與豪華座駕的全方位安排。"
       data-i18n-attr="content:meta.description"
     />
-    <title data-i18n="meta.title">CHASE | Private Concierge</title>
+    <title>CHASE | Private Concierge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@200;300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="assets/chase-map-preview.png?v=23" />
+    <link rel="preload" as="image" href="assets/helicopter-reference.jpg?v=23" />
+    <link rel="stylesheet" href="styles.css?v=official-20260712k" />
   </head>
-  <body>
+  <body class="github-v2-preview">
     <header class="site-header" data-header>
       <nav class="nav">
         <a href="#top" class="brand" aria-label="CHASE">
@@ -26,10 +28,10 @@
         </a>
         <ul class="nav-links">
           <li><a href="#about" data-i18n="nav.about">關於</a></li>
-          <li><a href="#services" data-i18n="nav.services">服務</a></li>
-          <li><a href="#aviation" data-i18n="nav.aviation">航空</a></li>
-          <li><a href="#yacht" data-i18n="nav.yacht">遊艇</a></li>
-          <li><a href="#chauffeur" data-i18n="nav.chauffeur">座駕</a></li>
+          <li><a href="#global-network" class="nav-services-overview">全球禮遇</a></li>
+          <li><a href="#service-aviation" data-i18n="nav.aviation">航空</a></li>
+          <li><a href="#service-yacht" data-i18n="nav.yacht">遊艇</a></li>
+          <li><a href="#service-chauffeur" data-i18n="nav.chauffeur">座駕</a></li>
           <li><a href="#membership" data-i18n="nav.membership">會員</a></li>
           <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
           <li><a href="#contact" data-i18n="nav.contact">聯絡</a></li>
@@ -57,10 +59,10 @@
       </nav>
       <div class="mobile-menu" data-mobile-menu>
         <a href="#about" data-i18n="nav.about">關於</a>
-        <a href="#services" data-i18n="nav.services">服務</a>
-        <a href="#aviation" data-i18n="nav.aviation">航空</a>
-        <a href="#yacht" data-i18n="nav.yacht">遊艇</a>
-        <a href="#chauffeur" data-i18n="nav.chauffeur">座駕</a>
+        <a href="#global-network" class="nav-services-overview">全球禮遇</a>
+        <a href="#service-aviation" data-i18n="nav.aviation">航空</a>
+        <a href="#service-yacht" data-i18n="nav.yacht">遊艇</a>
+        <a href="#service-chauffeur" data-i18n="nav.chauffeur">座駕</a>
         <a href="#membership" data-i18n="nav.membership">會員</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
         <a href="#contact" data-i18n="nav.contact">聯絡</a>
@@ -93,7 +95,7 @@
         <div class="hero-content">
           <span class="eyebrow" data-i18n="hero.eyebrow">PRIVATE CONCIERGE · 私人禮賓</span>
           <h1 data-i18n-html="hero.title">為極少數人<br />安排的世界</h1>
-          <p data-i18n="hero.copy">CHASE 御天禮賓，以絕對的私密與細節，為您統籌航空、遊艇與豪華座駕的每一段行程。</p>
+          <p data-i18n="hero.copy">CHASE禮賓，以絕對的私密與細節，為您統籌航空、遊艇與豪華座駕的每一段行程。</p>
         </div>
         <div class="scroll-mark"></div>
       </section>
@@ -101,11 +103,11 @@
       <section id="about" class="section container reveal">
         <div class="split-grid">
           <div>
-            <span class="eyebrow" data-i18n="about.eyebrow">ABOUT · 關於御天</span>
+            <span class="eyebrow">ABOUT · CHASE</span>
             <h2 data-i18n-html="about.title">低調，<br />是最高的禮遇</h2>
           </div>
           <div>
-            <p class="lead" data-i18n="about.lead">CHASE 御天禮賓存在於聚光燈之外。我們不追求規模，只服務於信任我們的少數人。從起飛、登船到抵達目的地前的每一段移動，皆由專屬團隊以最高標準悉心安排。</p>
+            <p class="lead">CHASE 專注於全球高端移動資源整合，提供私人飛機、觀光直升機、豪華座駕、遊艇與專屬禮賓服務，為每位貴賓打造安全、隱私且客製化的移動體驗。</p>
             <p data-i18n="about.copy">我們相信，真正的奢華不在於擁有，而在於從容。當您將時間交付於我們，繁瑣自會退場，留下的只有您應得的寧靜、私密與自由。</p>
             <div class="stats">
               <div><strong>24/7</strong><span data-i18n="stats.always">全天候待命</span></div>
@@ -117,112 +119,47 @@
         </div>
       </section>
 
+
+      <section id="global-network" class="section band reveal is-visible">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">COVERAGE · 服務網絡</span>
+              <h2>我們所在之處，<br />遍及各地</h2>
+            </div>
+            <p>從亞洲到歐美，CHASE 透過全球合作網絡，為貴賓協調航空、遊艇、豪華座駕與專屬禮賓安排。</p>
+          </div>
+          <div class="network-map final-map" aria-label="CHASE global service network"><img class="coverage-reference-image" src="assets/chase-map-preview.png?v=23" alt="CHASE 全球服務網絡地圖" /><span class="map-live-dot taiwan-live-dot" aria-label="Taiwan active service point"></span></div><div class="network-list"><span>台灣 TAIWAN</span><span>日本 JAPAN</span><span>韓國 KOREA</span><span>泰國 THAILAND</span><span>澳門 MACAU</span><span>新加坡 SINGAPORE</span><span>澳洲 AUSTRALIA</span><span>美洲 AMERICA</span></div>
+        </div>
+      </section>
       <section id="services" class="section band reveal">
         <div class="container">
           <div class="section-head">
             <div>
-              <span class="eyebrow" data-i18n="services.eyebrow">SERVICES · 服務範疇</span>
-              <h2 data-i18n="services.title">三段行程，皆已備妥</h2>
+              <span class="eyebrow">SERVICES · 服務範疇</span>
+              <h2 data-hybrid-html="services.title">陸、海、空<br />皆由 CHASE 安排</h2>
             </div>
-            <p data-i18n="services.copy">航空、遊艇與陸地豪華座駕，構成 CHASE 御天禮賓的核心移動服務。</p>
+            <p data-hybrid="services.copy">私人飛機、觀光直升機、遊艇與豪華座駕，構成 CHASE 高端移動禮賓的核心服務，從出發、抵達到銜接皆由專屬禮賓統籌。</p>
           </div>
-          <div class="service-grid">
-            <article class="service-card">
-              <figure>
-                <img class="image-focus-aviation" src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=1600&auto=format&fit=crop" alt="私人公務噴射機在跑道上準備起飛" loading="lazy" decoding="async" data-i18n-attr="alt:aviation.imageAlt" />
-                <span>01</span>
-              </figure>
-              <div>
-                <span class="eyebrow compact">AVIATION</span>
-                <h3 data-i18n="services.aviationTitle">私人航空</h3>
-                <p data-i18n="services.aviationCopy">私人飛機與直升機調度，從航線、時段到登機銜接，皆以您的節奏為準。</p>
-                <a href="#aviation" class="service-link" data-i18n="services.aviationCta">查看航空安排</a>
-              </div>
+          <div class="service-grid final-service-grid">
+            <article id="service-aviation" class="service-card service-card-aviation">
+              <figure><img class="image-focus-aviation" src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=1600&auto=format&fit=crop" alt="私人公務噴射機在跑道上準備起飛" loading="lazy" decoding="async" /><span>01</span></figure>
+              <div><span class="eyebrow compact">PRIVATE JET</span><h3>私人飛機</h3><p>全球私人飛機包機、商務飛行與跨國移動安排。由 CHASE 協調機型、航線、私人航廈與落地銜接。</p></div>
             </article>
-            <article class="service-card">
+            <article id="helicopter" class="service-card service-card-helicopter">
               <figure>
-                <img class="image-focus-yacht" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1600&auto=format&fit=crop" alt="停泊於碧藍海面上的豪華遊艇" loading="lazy" decoding="async" data-i18n-attr="alt:yacht.imageAlt" />
-                <span>02</span>
+                <img class="image-focus-helicopter" src="assets/helicopter-reference.jpg?v=23" alt="觀光直升機城市移動" loading="lazy" decoding="async" /><span>02</span>
               </figure>
-              <div>
-                <span class="eyebrow compact">YACHT</span>
-                <h3 data-i18n="services.yachtTitle">遊艇禮遇</h3>
-                <p data-i18n="services.yachtCopy">頂級遊艇、專屬船員與航線安排，讓海上的每一刻都成為私人時光。</p>
-                <a href="#yacht" class="service-link" data-i18n="services.yachtCta">查看遊艇安排</a>
-              </div>
+              <div><span class="eyebrow compact">HELICOPTER</span><h3>觀光直升機</h3><p>城市空中觀光、景點巡航、島嶼抵達與特殊活動接駁。為重視時間與體驗的行程提供高效率銜接。</p></div>
             </article>
-            <article class="service-card">
-              <figure>
-                <img class="image-focus-chauffeur" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop" alt="夜色中的豪華座駕" loading="lazy" decoding="async" data-i18n-attr="alt:chauffeur.imageAlt" />
-                <span>03</span>
-              </figure>
-              <div>
-                <span class="eyebrow compact">CHAUFFEUR</span>
-                <h3 data-i18n="services.chauffeurTitle">豪華座駕</h3>
-                <p data-i18n="services.chauffeurCopy">專屬司機、禮賓座駕與點對點接送。每一段陸地移動，皆準時、私密且周到。</p>
-                <a href="#chauffeur" class="service-link" data-i18n="services.chauffeurCta">查看座駕安排</a>
-              </div>
+            <article id="service-yacht" class="service-card service-card-yacht">
+              <figure><img class="image-focus-yacht" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1600&auto=format&fit=crop" alt="停泊於碧藍海面上的豪華遊艇" loading="lazy" decoding="async" /><span>03</span></figure>
+              <div><span class="eyebrow compact">YACHT</span><h3>遊艇包船</h3><p>私人遊艇包船、海上體驗與 VIP 活動安排。從船員、航線、餐飲到岸上接送，皆以私人方式整合。</p></div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="aviation" class="feature feature-right reveal">
-        <div class="feature-image">
-          <img class="image-focus-aviation" src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=2000&auto=format&fit=crop" alt="私人公務噴射機在跑道上準備起飛" loading="lazy" decoding="async" data-i18n-attr="alt:aviation.imageAlt" />
-        </div>
-        <div class="feature-copy">
-          <div>
-            <span class="eyebrow" data-i18n="aviation.eyebrow">AVIATION · 私人航空</span>
-            <h2 data-i18n="aviation.title">從起飛之前，便已就緒</h2>
-            <p data-i18n="aviation.copy1">需求確認後，CHASE 會依目的地、同行人數、時段與隱私需求，評估私人飛機或直升機的合適方案。</p>
-            <p data-i18n="aviation.copy2">航線、機型、私人航廈、快速通關與落地座駕會一併銜接，讓行程在出發前即安靜成形。</p>
-            <ul class="line-list">
-              <li data-i18n="aviation.item1">需求確認與航線評估</li>
-              <li data-i18n="aviation.item2">私人飛機與直升機方案</li>
-              <li data-i18n="aviation.item3">私人航廈與快速通關</li>
-              <li data-i18n="aviation.item4">落地座駕銜接</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="yacht" class="feature feature-left reveal">
-        <div class="feature-image">
-          <img class="image-focus-yacht" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2000&auto=format&fit=crop" alt="停泊於碧藍海面上的豪華遊艇" loading="lazy" decoding="async" data-i18n-attr="alt:yacht.imageAlt" />
-        </div>
-        <div class="feature-copy">
-          <div>
-            <span class="eyebrow" data-i18n="yacht.eyebrow">YACHT · 海上禮遇</span>
-            <h2 data-i18n="yacht.title">登船之前，海上已成私域</h2>
-            <p data-i18n="yacht.copy1">CHASE 會依出航地、賓客人數、停留時間與餐飲偏好，協調適合的遊艇、船員與航線。</p>
-            <p data-i18n="yacht.copy2">從登船動線、岸上接送到停泊與餐飲細節，皆在抵達前完成確認，讓海上時光保持私密與從容。</p>
-            <ul class="line-list">
-              <li data-i18n="yacht.item1">出航需求與航線規劃</li>
-              <li data-i18n="yacht.item2">遊艇、船員與餐飲確認</li>
-              <li data-i18n="yacht.item3">停泊與岸上動線安排</li>
-              <li data-i18n="yacht.item4">岸上接送無縫銜接</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="chauffeur" class="feature feature-right reveal">
-        <div class="feature-image">
-          <img class="image-focus-chauffeur" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop" alt="夜色中的豪華座駕" loading="lazy" decoding="async" data-i18n-attr="alt:chauffeur.imageAlt" />
-        </div>
-        <div class="feature-copy">
-          <div>
-            <span class="eyebrow" data-i18n="chauffeur.eyebrow">CHAUFFEUR · 豪華座駕</span>
-            <h2 data-i18n="chauffeur.title">抵達之前，座駕已在等候</h2>
-            <p data-i18n="chauffeur.copy1">我們依城市、車型偏好、行李與隨行人員需求，安排相應等級座駕與具禮賓經驗的專屬司機。</p>
-            <p data-i18n="chauffeur.copy2">路線、等候時間、接送點與多段轉場預先確認，使機場、碼頭、會議與私人行程之間銜接無聲。</p>
-            <ul class="line-list">
-              <li data-i18n="chauffeur.item1">車型與座位需求確認</li>
-              <li data-i18n="chauffeur.item2">專屬司機與禮賓接待</li>
-              <li data-i18n="chauffeur.item3">機場、碼頭與城市轉場</li>
-              <li data-i18n="chauffeur.item4">多段私人行程銜接</li>
-            </ul>
+            <article id="service-chauffeur" class="service-card service-card-chauffeur">
+              <figure><img class="image-focus-chauffeur" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop" alt="夜色中的豪華座駕" loading="lazy" decoding="async" /><span>04</span></figure>
+              <div><span class="eyebrow compact">CHAUFFEUR</span><h3>豪華座駕</h3><p>豪華車接送、商務接待、機場接送與城市移動。依車型、行李、隨行人員與安全需求安排。</p></div>
+            </article>
           </div>
         </div>
       </section>
@@ -240,15 +177,14 @@
                 <h3 data-i18n="membership.planTitle">尊榮</h3>
                 <span data-i18n="membership.planTier">Prestige</span>
               </div>
-              <p data-i18n="membership.planCopy">為重視效率、隱私與細節的會員而設。尊榮會員由 CHASE 1:1 專屬禮賓承接航空、遊艇、豪華座駕與合作禮遇，重要行程可享優先預留與會員限定條件。</p>
+              <p data-hybrid="membership.copy">為重視效率、隱私與細節的會員而設。由 CHASE 1:1 專屬禮賓承接航空、遊艇、豪華座駕與合作禮遇，重要行程可享優先預留與會員限定條件。</p>
               <ul class="line-list compact-list">
-                <li data-i18n="membership.benefit1">1:1 專屬禮賓窗口</li>
-                <li data-i18n="membership.benefit2">私人航空與直升機安排</li>
-                <li data-i18n="membership.benefit3">快速通關與私人航廈協調</li>
-                <li data-i18n="membership.benefit4">全球遊艇與岸上接送無縫銜接</li>
-                <li data-i18n="membership.benefit5">豪華座駕與專屬司機待命</li>
-                <li data-i18n="membership.benefit6">CHASE 御天合作品牌專屬禮遇</li>
-                <li data-i18n="membership.benefit7">會員限定優惠與優先預留資格</li>
+                <li data-hybrid="membership.benefit1">1:1 專屬禮賓</li>
+                <li data-hybrid="membership.benefit2">航空與直升機安排</li>
+                <li data-hybrid="membership.benefit3">遊艇與岸上接送</li>
+                <li data-hybrid="membership.benefit4">豪華座駕與專屬司機</li>
+                <li data-hybrid="membership.benefit5">合作品牌禮遇</li>
+                <li data-hybrid="membership.benefit6">優先預留資格</li>
               </ul>
               <a href="#contact" class="button button-primary" data-i18n="membership.apply">申請此資格</a>
             </article>
@@ -265,13 +201,11 @@
           <p data-i18n="faq.copy">我們將常見的貴賓詢問整理如下。每一項安排仍會依您的目的地、行程與安全需求，由專屬禮賓個別確認。</p>
         </div>
         <div class="faq-list">
-          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-i18n="faq.q1">你們提供的移動服務包含哪些保障？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-i18n="faq.a1">每一項陸、海、空移動安排，皆會依服務內容、目的地與行程規格配置相應保障，包含行程確認、供應商審核、接送銜接與必要安全支援，讓旅程保持安心與從容。</p></div></div></article>
-          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-i18n="faq.q2">你們服務的國家與地區有哪些？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-i18n="faq.a2">目前服務範圍涵蓋台灣、日本、韓國、香港、澳門、泰國、菲律賓、新加坡，並可依需求協調歐洲、北美及其他指定地區的私人行程安排。</p></div></div></article>
-          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-i18n="faq.q3">尊榮會員如何申請？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-i18n="faq.a3">任何貴賓皆可提出申請。為維持服務品質與會員體驗，CHASE 會先進行需求確認與資格審核，再由專屬禮賓回覆後續安排。</p></div></div></article>
-          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-i18n="faq.q4">豪華座駕是否可安排英文司機與指定車型？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-i18n="faq.a4">可以。依城市、日期與行程需求，CHASE 可協調具英文溝通能力的司機及指定車型。常見安排包含 Mercedes-Benz S-Class、Lexus LM、Toyota Alphard、Mercedes-Benz V-Class、Rolls-Royce 與高規格保母車；合作司機皆需經審核，並重視安全駕駛、禮賓應對、時間掌握與行程保密。</p></div></div></article>
-          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-i18n="faq.q5">行程是否可以完全客製化？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-i18n="faq.a5">可以。您只需提供目的地、同行人數、時間、偏好與安全需求，CHASE 會為您整合可行方案與報價，確認後再進一步安排航空、遊艇、座駕與接待細節。</p></div></div></article>
-          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-i18n="faq.q6">是否可以安排安全保護或隨行人員？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-i18n="faq.a6">可以。無論貴賓身處哪個國家或地區，CHASE 可依需求協調專業保鏢、隨行人員與安全移動方案，細節會依目的地風險、身份需求與行程性質個別規劃。</p></div></div></article>
-          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-i18n="faq.q7">為什麼選擇 CHASE？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-i18n="faq.a7">CHASE 提供的不是單一交通工具，而是整段旅程的無縫銜接。從航班、碼頭、座駕到安全與接待細節，我們以私密、安全、效率與分寸為核心，讓每一段移動都保持準時、安定且不被打擾。</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-hybrid="faq.q1">你們提供的移動服務包含哪些保障？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-hybrid="faq.a1">每一項陸、海、空移動安排，皆會依服務內容、目的地與行程規格配置相應保障，包含行程確認、合作夥伴審核、接送銜接與必要安全支援，讓旅程保持安心與從容。</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-hybrid="faq.q2">你們服務的國家與地區有哪些？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-hybrid="faq.a2">目前服務範圍涵蓋台灣、日本、韓國、香港、澳門、泰國、菲律賓、新加坡，並可依需求協調歐洲、北美及其他指定地區的私人行程安排。</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-hybrid="faq.q3">尊榮會員如何申請？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-hybrid="faq.a3">任何貴賓皆可提出申請。為維持服務品質與會員體驗，CHASE 會先進行需求確認與資格審核，再由專屬禮賓回覆後續安排。</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-hybrid="faq.q4">豪華座駕與指定車型、司機語言是否可以安排？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-hybrid="faq.a4">可以。依城市、日期與行程需求，CHASE 可協調指定車型、英文或其他語言溝通司機，以及商務接待與機場接送。合作司機皆經審核，並重視安全駕駛、禮賓應對、時間掌握與行程保密。</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" data-faq-toggle><span class="faq-client" data-i18n="faq.client">貴賓詢問</span><span data-hybrid="faq.q5">行程是否可以客製化，並安排安全保護？</span><i></i></button><div class="faq-panel"><div class="faq-answer"><span data-i18n="faq.answerLabel">CHASE 回覆</span><p data-hybrid="faq.a5">可以。您只需提供目的地、同行人數、時間、偏好與安全需求，CHASE 會為您整合可行方案與報價；如需保鏢、隨行人員或安全移動方案，也可依目的地與行程性質個別規劃。</p></div></div></article>
         </div>
       </section>
       <section id="contact" class="section container reveal">
@@ -279,7 +213,7 @@
           <div>
             <span class="eyebrow" data-i18n="contact.eyebrow">CONTACT · 與我們聯絡</span>
             <h2 data-i18n-html="contact.title">開啟一段<br />專屬的對話</h2>
-            <p data-i18n="contact.copy">留下您的聯絡方式，御天的會員顧問將於 24 小時內親自與您聯繫。所有資訊皆嚴格保密。</p>
+            <p data-i18n="contact.copy">留下您的聯絡方式，CHASE 專屬禮賓將以私密方式與您確認後續安排。所有資訊皆嚴格保密。</p>
             <div class="contact-lines">
               <div><span>EMAIL</span><a href="mailto:concierge@chaseconcierge.com">concierge@chaseconcierge.com</a></div>
               <div><span>TELEPHONE</span><a href="tel:+85230000000">+852 3000 0000</a></div>
@@ -295,7 +229,7 @@
             <label><span data-i18n="form.name">姓名</span><input type="text" name="name" placeholder="您的稱呼" data-i18n-attr="placeholder:form.namePlaceholder" /></label>
             <label><span data-i18n="form.phone">聯絡電話</span><input type="text" name="phone" placeholder="含國碼" data-i18n-attr="placeholder:form.phonePlaceholder" /></label>
             <label class="full"><span data-i18n="form.email">電子郵件</span><input type="email" name="email" placeholder="you@example.com" /></label>
-            <label class="full"><span data-i18n="form.message">需求描述</span><textarea name="message" rows="4" placeholder="請簡述您期望御天為您安排的事項" data-i18n-attr="placeholder:form.messagePlaceholder"></textarea></label>
+            <label class="full"><span data-i18n="form.message">需求描述</span><textarea name="message" rows="4" placeholder="請簡述您期望 CHASE 為您安排的事項" data-i18n-attr="placeholder:form.messagePlaceholder"></textarea></label>
             <button class="button button-primary submit-button" type="submit" data-i18n="form.submit">遞交申請</button>
             <p class="form-status" data-form-status data-i18n="form.statusReady" hidden>您的申請將以私人方式送出。</p>
           </form>
@@ -312,10 +246,10 @@
           </div>
           <nav>
             <a href="#about" data-i18n="nav.about">關於</a>
-            <a href="#services" data-i18n="nav.services">服務</a>
-            <a href="#aviation" data-i18n="nav.aviation">航空</a>
-            <a href="#yacht" data-i18n="nav.yacht">遊艇</a>
-            <a href="#chauffeur" data-i18n="nav.chauffeur">座駕</a>
+            <a href="#global-network" class="nav-services-overview">全球禮遇</a>
+            <a href="#service-aviation" data-i18n="nav.aviation">航空</a>
+            <a href="#service-yacht" data-i18n="nav.yacht">遊艇</a>
+            <a href="#service-chauffeur" data-i18n="nav.chauffeur">座駕</a>
             <a href="#membership" data-i18n="nav.membership">會員</a>
             <a href="#faq" data-i18n="nav.faq">FAQ</a>
             <a href="#contact" data-i18n="nav.contact">聯絡</a>
@@ -342,8 +276,446 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <script src="script.js?v=23"></script><!-- final-interactions-v11 -->
+<script>
+  (function () {
+    function refineContactCopy() {
+      var contact = document.querySelector('#contact');
+      if (!contact) return;
+      var copy = contact.querySelector('.contact-grid > div > p');
+      var textarea = contact.querySelector('textarea[name="message"]');
+      if (copy) {
+        copy.removeAttribute('data-i18n');
+        copy.textContent = '留下您的需求與聯絡方式，CHASE 專屬禮賓將以私密方式與您確認後續安排。所有資訊皆嚴格保密。';
+      }
+      if (textarea) {
+        textarea.removeAttribute('data-i18n-attr');
+        textarea.setAttribute('placeholder', '請簡述您期望 CHASE 為您安排的事項');
+      }
+    }
+
+    function activateTaiwanPoint() {
+      var map = document.querySelector('.final-map');
+      if (map) map.classList.add('is-taiwan-active');
+    }
+
+
+    var hybridCopy = {
+      zh: {
+        navOverview: '全球禮遇',
+        'services.title': '陸、海、空<br />皆由 CHASE 安排',
+        'services.copy': '私人飛機、觀光直升機、遊艇與豪華座駕，構成 CHASE 高端移動禮賓的核心服務，從出發、抵達到銜接皆由專屬禮賓統籌。',
+        'membership.copy': '為重視效率、隱私與細節的會員而設。由 CHASE 1:1 專屬禮賓承接航空、遊艇、豪華座駕與合作禮遇，重要行程可享優先預留與會員限定條件。',
+        'membership.benefit1': '1:1 專屬禮賓',
+        'membership.benefit2': '航空與直升機安排',
+        'membership.benefit3': '遊艇與岸上接送',
+        'membership.benefit4': '豪華座駕與專屬司機',
+        'membership.benefit5': '合作品牌禮遇',
+        'membership.benefit6': '優先預留資格',
+        'faq.q1': '你們提供的移動服務包含哪些保障？',
+        'faq.a1': '每一項陸、海、空移動安排，皆會依服務內容、目的地與行程規格配置相應保障，包含行程確認、合作夥伴審核、接送銜接與必要安全支援，讓旅程保持安心與從容。',
+        'faq.q2': '你們服務的國家與地區有哪些？',
+        'faq.a2': '目前服務範圍涵蓋台灣、日本、韓國、香港、澳門、泰國、菲律賓、新加坡，並可依需求協調歐洲、北美及其他指定地區的私人行程安排。',
+        'faq.q3': '尊榮會員如何申請？',
+        'faq.a3': '任何貴賓皆可提出申請。為維持服務品質與會員體驗，CHASE 會先進行需求確認與資格審核，再由專屬禮賓回覆後續安排。',
+        'faq.q4': '豪華座駕與指定車型、司機語言是否可以安排？',
+        'faq.a4': '可以。依城市、日期與行程需求，CHASE 可協調指定車型、英文或其他語言溝通司機，以及商務接待與機場接送。合作司機皆經審核，並重視安全駕駛、禮賓應對、時間掌握與行程保密。',
+        'faq.q5': '行程是否可以客製化，並安排安全保護？',
+        'faq.a5': '可以。您只需提供目的地、同行人數、時間、偏好與安全需求，CHASE 會為您整合可行方案與報價；如需保鏢、隨行人員或安全移動方案，也可依目的地與行程性質個別規劃。'
+      },
+      en: {
+        navOverview: 'Global Privileges',
+        'services.title': 'Air, Sea, and Ground<br />Arranged by CHASE',
+        'services.copy': 'Private jets, sightseeing helicopters, yachts, and luxury chauffeurs form CHASE\'s core mobility concierge, with each departure, arrival, and transfer handled by a dedicated advisor.',
+        'membership.copy': 'Designed for members who value efficiency, privacy, and detail. CHASE provides one-to-one concierge support across aviation, yachts, chauffeured mobility, and partner privileges, with priority holds for important itineraries.',
+        'membership.benefit1': 'One-to-one concierge',
+        'membership.benefit2': 'Aviation and helicopter arrangements',
+        'membership.benefit3': 'Yachts and shore transfers',
+        'membership.benefit4': 'Luxury chauffeurs and dedicated drivers',
+        'membership.benefit5': 'Partner privileges',
+        'membership.benefit6': 'Priority reservation access',
+        'faq.q1': 'What safeguards are included in your mobility services?',
+        'faq.a1': 'Each land, sea, and air arrangement is matched to the service scope, destination, and itinerary, including itinerary confirmation, partner review, transfer coordination, and necessary safety support.',
+        'faq.q2': 'Which countries and regions do you serve?',
+        'faq.a2': 'Current coverage includes Taiwan, Japan, Korea, Hong Kong, Macau, Thailand, the Philippines, and Singapore. Europe, North America, and other requested regions may be coordinated according to itinerary needs.',
+        'faq.q3': 'How do I apply for Prestige membership?',
+        'faq.a3': 'Any guest may apply. To preserve service quality and member experience, CHASE first confirms requirements and reviews eligibility before a dedicated concierge follows up.',
+        'faq.q4': 'Can vehicle class and driver language be arranged?',
+        'faq.a4': 'Yes. Depending on city, date, and itinerary, CHASE can coordinate requested vehicle classes, English or other language-speaking drivers, business reception, and airport transfers. Partner drivers are reviewed for safety, etiquette, timing, and discretion.',
+        'faq.q5': 'Can itineraries be customized with security support?',
+        'faq.a5': 'Yes. Provide destination, guest count, timing, preferences, and safety needs. CHASE will consolidate feasible options and quotations; bodyguards, accompanying personnel, and secure mobility plans can also be arranged by itinerary.'
+      },
+      ja: {
+        navOverview: 'グローバル礼遇',
+        'services.title': '空・海・陸の移動を<br />CHASEが整えます',
+        'services.copy': 'プライベートジェット、観光ヘリコプター、ヨット、ラグジュアリー送迎を中心に、出発から到着、乗り継ぎまで専属コンシェルジュが統括します。',
+        'membership.copy': '効率、プライバシー、細部を重視する会員のために。CHASEの専属コンシェルジュが航空、ヨット、送迎、提携特典を一対一で承ります。',
+        'membership.benefit1': '一対一の専属コンシェルジュ',
+        'membership.benefit2': '航空・ヘリコプター手配',
+        'membership.benefit3': 'ヨットと陸上送迎',
+        'membership.benefit4': '高級車と専属ドライバー',
+        'membership.benefit5': '提携ブランド特典',
+        'membership.benefit6': '優先予約資格',
+        'faq.q1': '移動サービスにはどのような保障が含まれますか？',
+        'faq.a1': '陸・海・空の各手配は、内容、目的地、旅程に応じて、旅程確認、提携先審査、送迎連携、必要な安全支援を組み合わせます。',
+        'faq.q2': '対応国・地域はどこですか？',
+        'faq.a2': '台湾、日本、韓国、香港、マカオ、タイ、フィリピン、シンガポールを中心に、欧州、北米、その他地域も旅程に応じて調整可能です。',
+        'faq.q3': '尊榮会員はどのように申請しますか？',
+        'faq.a3': 'どなたでも申請可能です。サービス品質を保つため、CHASEがご要望確認と審査を行い、専属コンシェルジュがご連絡します。',
+        'faq.q4': '車種やドライバーの言語指定は可能ですか？',
+        'faq.a4': '可能です。都市、日程、旅程に応じて指定車種、英語またはその他言語対応ドライバー、ビジネス接遇、空港送迎を調整します。',
+        'faq.q5': '旅程のカスタマイズや安全対策は可能ですか？',
+        'faq.a5': '可能です。目的地、人数、時間、嗜好、安全要件をもとに、実行可能なプランと見積を整えます。警護や同行スタッフも個別に調整できます。'
+      },
+      ko: {
+        navOverview: '글로벌 예우',
+        'services.title': '항공, 해상, 지상 이동을<br />CHASE가 조율합니다',
+        'services.copy': '프라이빗 제트, 관광 헬리콥터, 요트, 럭셔리 차량을 중심으로 출발, 도착, 환승까지 전담 컨시어지가 통합 관리합니다.',
+        'membership.copy': '효율, 프라이버시, 세부 사항을 중시하는 회원을 위한 서비스입니다. CHASE 전담 컨시어지가 항공, 요트, 차량 이동, 제휴 혜택을 일대일로 관리합니다.',
+        'membership.benefit1': '1:1 전담 컨시어지',
+        'membership.benefit2': '항공 및 헬리콥터 준비',
+        'membership.benefit3': '요트와 육상 이동',
+        'membership.benefit4': '럭셔리 차량과 전담 기사',
+        'membership.benefit5': '제휴 브랜드 혜택',
+        'membership.benefit6': '우선 예약 자격',
+        'faq.q1': '이동 서비스에는 어떤 보장이 포함되나요?',
+        'faq.a1': '육상, 해상, 항공 이동은 서비스 범위, 목적지, 일정에 맞춰 일정 확인, 파트너 검토, 이동 연결, 필요한 안전 지원을 포함합니다.',
+        'faq.q2': '서비스 가능한 국가와 지역은 어디인가요?',
+        'faq.a2': '현재 대만, 일본, 한국, 홍콩, 마카오, 태국, 필리핀, 싱가포르를 포함하며, 유럽, 북미 및 기타 지역은 일정에 따라 조율 가능합니다.',
+        'faq.q3': 'Prestige 멤버십은 어떻게 신청하나요?',
+        'faq.a3': '누구나 신청할 수 있습니다. 서비스 품질을 유지하기 위해 CHASE가 요청 사항과 자격을 확인한 뒤 전담 컨시어지가 연락드립니다.',
+        'faq.q4': '차종과 기사 언어를 지정할 수 있나요?',
+        'faq.a4': '가능합니다. 도시, 날짜, 일정에 따라 지정 차종, 영어 또는 기타 언어 가능 기사, 비즈니스 응대, 공항 이동을 조율할 수 있습니다.',
+        'faq.q5': '맞춤 일정과 안전 보호도 가능한가요?',
+        'faq.a5': '가능합니다. 목적지, 인원, 시간, 선호 사항, 안전 요구를 알려주시면 가능한 방안과 견적을 정리합니다. 경호, 수행 인력, 안전 이동도 별도 조율 가능합니다.'
+      },
+      th: {
+        navOverview: 'สิทธิพิเศษระดับโลก',
+        'services.title': 'อากาศ ทะเล และภาคพื้นดิน<br />จัดการโดย CHASE',
+        'services.copy': 'เครื่องบินส่วนตัว เฮลิคอปเตอร์ชมวิว เรือยอชต์ และรถหรู คือบริการหลักของ CHASE โดยมีคอนเซียร์จส่วนตัวดูแลตั้งแต่ออกเดินทาง ถึงปลายทาง และการเชื่อมต่อทุกช่วง',
+        'membership.copy': 'สำหรับสมาชิกที่ให้ความสำคัญกับประสิทธิภาพ ความเป็นส่วนตัว และรายละเอียด CHASE ให้บริการคอนเซียร์จแบบหนึ่งต่อหนึ่ง ครอบคลุมการบิน เรือยอชต์ รถหรู และสิทธิพิเศษจากพันธมิตร',
+        'membership.benefit1': 'คอนเซียร์จส่วนตัว 1:1',
+        'membership.benefit2': 'การบินและเฮลิคอปเตอร์',
+        'membership.benefit3': 'เรือยอชต์และรถรับส่ง',
+        'membership.benefit4': 'รถหรูและคนขับส่วนตัว',
+        'membership.benefit5': 'สิทธิพิเศษจากพันธมิตร',
+        'membership.benefit6': 'สิทธิ์จองล่วงหน้า',
+        'faq.q1': 'บริการเดินทางมีการดูแลความปลอดภัยอย่างไร?',
+        'faq.a1': 'ทุกการเดินทางทางบก ทางทะเล และทางอากาศจะได้รับการจัดการตามประเภทบริการ จุดหมาย และกำหนดการ รวมถึงยืนยันแผน ตรวจสอบพันธมิตร ประสานการรับส่ง และสนับสนุนด้านความปลอดภัยที่จำเป็น',
+        'faq.q2': 'ให้บริการประเทศและภูมิภาคใดบ้าง?',
+        'faq.a2': 'ปัจจุบันครอบคลุมไต้หวัน ญี่ปุ่น เกาหลี ฮ่องกง มาเก๊า ไทย ฟิลิปปินส์ และสิงคโปร์ รวมถึงยุโรป อเมริกาเหนือ และพื้นที่อื่นตามความต้องการของแผนเดินทาง',
+        'faq.q3': 'สมัครสมาชิก Prestige อย่างไร?',
+        'faq.a3': 'แขกทุกท่านสามารถสมัครได้ เพื่อรักษาคุณภาพบริการ CHASE จะยืนยันความต้องการและตรวจสอบคุณสมบัติก่อนให้คอนเซียร์จส่วนตัวติดต่อกลับ',
+        'faq.q4': 'สามารถเลือกประเภทรถและภาษาของคนขับได้ไหม?',
+        'faq.a4': 'ได้ ตามเมือง วันที่ และกำหนดการ CHASE สามารถประสานรถที่ต้องการ คนขับที่สื่อสารภาษาอังกฤษหรือภาษาอื่น การต้อนรับทางธุรกิจ และรถรับส่งสนามบิน',
+        'faq.q5': 'สามารถจัดแผนเฉพาะและมาตรการรักษาความปลอดภัยได้ไหม?',
+        'faq.a5': 'ได้ เพียงแจ้งจุดหมาย จำนวนผู้ร่วมเดินทาง เวลา ความต้องการ และข้อกำหนดด้านความปลอดภัย CHASE จะจัดทำแผนและใบเสนอราคา รวมถึงประสานบอดี้การ์ดหรือผู้ติดตามได้ตามลักษณะการเดินทาง'
+      },
+      es: {
+        navOverview: 'Privilegios globales',
+        'services.title': 'Aire, mar y tierra<br />coordinados por CHASE',
+        'services.copy': 'Jets privados, helicópteros panorámicos, yates y chóferes de lujo forman el núcleo del concierge de movilidad de CHASE, con cada salida, llegada y conexión atendida por un asesor dedicado.',
+        'membership.copy': 'Diseñado para miembros que valoran eficiencia, privacidad y detalle. CHASE ofrece concierge uno a uno para aviación, yates, movilidad con chófer y privilegios de socios.',
+        'membership.benefit1': 'Concierge uno a uno',
+        'membership.benefit2': 'Aviación y helicópteros',
+        'membership.benefit3': 'Yates y traslados en tierra',
+        'membership.benefit4': 'Chóferes de lujo y conductores dedicados',
+        'membership.benefit5': 'Privilegios de socios',
+        'membership.benefit6': 'Acceso prioritario de reserva',
+        'faq.q1': '¿Qué garantías incluyen sus servicios de movilidad?',
+        'faq.a1': 'Cada arreglo por tierra, mar y aire se ajusta al servicio, destino e itinerario, incluyendo confirmación, revisión de socios, coordinación de traslados y apoyo de seguridad necesario.',
+        'faq.q2': '¿En qué países y regiones operan?',
+        'faq.a2': 'La cobertura actual incluye Taiwán, Japón, Corea, Hong Kong, Macao, Tailandia, Filipinas y Singapur. Europa, Norteamérica y otras regiones pueden coordinarse según el itinerario.',
+        'faq.q3': '¿Cómo se solicita la membresía Prestige?',
+        'faq.a3': 'Cualquier invitado puede solicitarla. Para mantener la calidad del servicio, CHASE confirma primero las necesidades y revisa la elegibilidad antes del seguimiento de un concierge dedicado.',
+        'faq.q4': '¿Se puede solicitar clase de vehículo e idioma del conductor?',
+        'faq.a4': 'Sí. Según ciudad, fecha e itinerario, CHASE puede coordinar vehículos específicos, conductores en inglés u otros idiomas, recepción de negocios y traslados al aeropuerto.',
+        'faq.q5': '¿Pueden personalizar el itinerario con apoyo de seguridad?',
+        'faq.a5': 'Sí. Indique destino, número de invitados, horarios, preferencias y necesidades de seguridad. CHASE consolidará opciones y cotización; también puede coordinar escoltas, personal acompañante y movilidad segura.'
+      }
+    };
+
+    function currentHybridLang() {
+      var lang = (document.documentElement.lang || 'zh-Hant').split('-')[0];
+      return hybridCopy[lang] ? lang : 'zh';
+    }
+
+    function refineHybridNavCopy() {
+      var lang = currentHybridLang();
+      document.querySelectorAll('.nav-services-overview').forEach(function (item) {
+        item.textContent = hybridCopy[lang].navOverview;
+      });
+    }
+
+    function refineHybridContent() {
+      var lang = currentHybridLang();
+      document.querySelectorAll('[data-hybrid]').forEach(function (item) {
+        var key = item.getAttribute('data-hybrid');
+        if (hybridCopy[lang][key]) item.textContent = hybridCopy[lang][key];
+      });
+      document.querySelectorAll('[data-hybrid-html]').forEach(function (item) {
+        var key = item.getAttribute('data-hybrid-html');
+        if (hybridCopy[lang][key]) item.innerHTML = hybridCopy[lang][key];
+      });
+    }
+
+    function refineHybridAll() {
+      refineHybridNavCopy();
+      refineHybridContent();
+    }
+
+    document.querySelectorAll('[data-lang]').forEach(function (button) {
+      button.addEventListener('click', function () { window.setTimeout(refineHybridAll, 0); });
+    });
+    refineContactCopy();
+    refineHybridAll();
+    window.addEventListener('load', function () { refineContactCopy(); refineHybridAll(); });
+    document.addEventListener('languagechange', function () { refineContactCopy(); refineHybridAll(); });
+
+
+
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+          if (lat >= 21 && lat <= 26.8 && lng >= 119 && lng <= 123.8) activateTaiwanPoint();
+        },
+        function () {},
+        { enableHighAccuracy: false, timeout: 3500, maximumAge: 600000 }
+      );
+    }
+  })();
+</script>
+<!-- /final-interactions-v11 --><!-- mobile-service-focus-v22 -->
+<script>
+  (function () {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.final-service-grid .service-card'));
+    if (!cards.length || !('IntersectionObserver' in window)) return;
+
+    var media = window.matchMedia('(max-width: 639px)');
+
+    function clearFocus() {
+      cards.forEach(function (card) { card.classList.remove('is-mobile-focus'); });
+    }
+
+    function chooseCenteredCard() {
+      if (!media.matches) {
+        clearFocus();
+        return;
+      }
+      var center = window.innerHeight / 2;
+      var best = null;
+      var bestDistance = Infinity;
+      cards.forEach(function (card) {
+        var rect = card.getBoundingClientRect();
+        var visible = rect.bottom > window.innerHeight * 0.22 && rect.top < window.innerHeight * 0.78;
+        if (!visible) return;
+        var cardCenter = rect.top + rect.height / 2;
+        var distance = Math.abs(cardCenter - center);
+        if (distance < bestDistance) {
+          best = card;
+          bestDistance = distance;
+        }
+      });
+      clearFocus();
+      if (best) best.classList.add('is-mobile-focus');
+    }
+
+    var focusTicking = false;
+
+    function scheduleCenteredCard() {
+      if (focusTicking) return;
+      focusTicking = true;
+      window.requestAnimationFrame(function () {
+        focusTicking = false;
+        chooseCenteredCard();
+      });
+    }
+
+    var observer = new IntersectionObserver(scheduleCenteredCard, { threshold: [0.25, 0.45, 0.65, 0.85] });
+    cards.forEach(function (card) { observer.observe(card); });
+    chooseCenteredCard();
+    window.addEventListener('scroll', scheduleCenteredCard, { passive: true });
+    window.addEventListener('resize', scheduleCenteredCard);
+  })();
+</script>
+<!-- /mobile-service-focus-v22 -->
+<script>
+  (function () {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var activeFrame = null;
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function visualAnchorFor(target) {
+      if (!target) return null;
+      if (target.id === 'about') return window.innerWidth <= 639 ? (target.querySelector('h2') || target) : (target.querySelector('.split-grid > div:first-child') || target.querySelector('h2') || target);
+      if (target.id === 'services') return target.querySelector('.section-head') || target.querySelector('h2') || target;
+      if (target.id === 'global-network') return target.querySelector('.section-head') || target.querySelector('h2') || target;
+      if (target.id === 'membership') return target.querySelector('.center-head') || target.querySelector('h2') || target;
+      if (target.id === 'faq') return target.querySelector('.section-head') || target.querySelector('h2') || target;
+      if (target.id === 'contact') return target.querySelector('.contact-grid') || target.querySelector('h2') || target;
+      return target;
+    }
+
+    function targetTop(target) {
+      var header = document.querySelector('[data-header]');
+      var nav = header ? header.querySelector('.nav') : null;
+      var headerHeight = nav ? nav.getBoundingClientRect().height : (header ? header.getBoundingClientRect().height : 0);
+      var anchor = visualAnchorFor(target) || target;
+      var isMobile = window.innerWidth <= 639;
+      var isServiceCard = target.classList && target.classList.contains('service-card');
+      var margin = isServiceCard ? (isMobile ? 22 : 28) : (isMobile ? 16 : 22);
+      return Math.max(0, window.pageYOffset + anchor.getBoundingClientRect().top - headerHeight - margin);
+    }
+
+    var anchorFocusCards = [];
+    var anchorFocusLockUntil = 0;
+    var anchorFocusTicking = false;
+
+    function clearAnchorTargets() {
+      document.querySelectorAll('.is-anchor-target, .is-anchor-related').forEach(function (item) {
+        item.classList.remove('is-anchor-target', 'is-anchor-related');
+      });
+      anchorFocusCards = [];
+    }
+
+    function markAnchorTarget(target) {
+      clearAnchorTargets();
+      if (!target || !target.classList) return;
+      target.classList.add('is-anchor-target');
+      anchorFocusCards = [target];
+      if (target.id === 'service-aviation') {
+        var helicopter = document.querySelector('#helicopter');
+        if (helicopter) {
+          helicopter.classList.add('is-anchor-related');
+          anchorFocusCards.push(helicopter);
+        }
+      }
+      anchorFocusLockUntil = Date.now() + 1150;
+    }
+
+    function cardIsMeaningfullyVisible(card) {
+      if (!card) return false;
+      var rect = card.getBoundingClientRect();
+      var header = document.querySelector('[data-header]');
+      var nav = header ? header.querySelector('.nav') : null;
+      var navBottom = nav ? nav.getBoundingClientRect().bottom : 0;
+      var visibleTop = Math.max(rect.top, navBottom);
+      var visibleBottom = Math.min(rect.bottom, window.innerHeight);
+      var visible = Math.max(0, visibleBottom - visibleTop);
+      var needed = Math.min(rect.height * 0.18, 120);
+      return visible >= needed;
+    }
+
+    function updateAnchorFocusVisibility() {
+      anchorFocusTicking = false;
+      if (!anchorFocusCards.length || Date.now() < anchorFocusLockUntil) return;
+      var stillVisible = anchorFocusCards.some(cardIsMeaningfullyVisible);
+      if (!stillVisible) clearAnchorTargets();
+    }
+
+    function scheduleAnchorFocusVisibility() {
+      if (anchorFocusTicking) return;
+      anchorFocusTicking = true;
+      window.requestAnimationFrame(updateAnchorFocusVisibility);
+    }
+
+    var savedScrollBehavior = '';
+
+    function forceInstantScrollMode() {
+      savedScrollBehavior = document.documentElement.style.scrollBehavior || '';
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+
+    function restoreScrollMode() {
+      document.documentElement.style.scrollBehavior = savedScrollBehavior;
+    }
+
+    function cancelSmoothScroll() {
+      if (activeFrame) window.cancelAnimationFrame(activeFrame);
+      activeFrame = null;
+      restoreScrollMode();
+    }
+
+    function smoothTo(target, hash) {
+      if (!target) return false;
+      markAnchorTarget(target);
+      cancelSmoothScroll();
+
+      if (window.history && window.history.pushState && hash) {
+        window.history.pushState(null, '', hash);
+      }
+
+      if (reduceMotion) {
+        forceInstantScrollMode();
+        window.scrollTo({ top: targetTop(target), left: 0, behavior: 'auto' });
+        restoreScrollMode();
+        return true;
+      }
+
+      forceInstantScrollMode();
+      var start = window.pageYOffset;
+      var end = targetTop(target);
+      var distance = Math.abs(end - start);
+      if (distance < 2) {
+        restoreScrollMode();
+        return true;
+      }
+      var duration = Math.min(760, Math.max(360, distance * 0.38));
+      var started = null;
+
+      function step(time) {
+        if (started === null) started = time;
+        var progress = Math.min(1, (time - started) / duration);
+        var eased = easeOutCubic(progress);
+        window.scrollTo({ top: start + (end - start) * eased, left: 0, behavior: 'auto' });
+        if (progress < 1) {
+          activeFrame = window.requestAnimationFrame(step);
+        } else {
+          activeFrame = null;
+          restoreScrollMode();
+          markAnchorTarget(target);
+        }
+      }
+
+      activeFrame = window.requestAnimationFrame(step);
+      return true;
+    }
+
+    function restoreAnchorFromHash() {
+      if (!window.location.hash || window.location.hash === '#') return;
+      var target = document.querySelector(window.location.hash);
+      if (target) markAnchorTarget(target);
+    }
+
+    ['wheel', 'touchstart'].forEach(function (eventName) {
+      window.addEventListener(eventName, cancelSmoothScroll, { passive: true });
+    });
+
+    window.addEventListener('keydown', function (event) {
+      if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].indexOf(event.key) !== -1) cancelSmoothScroll();
+    });
+    window.addEventListener('scroll', scheduleAnchorFocusVisibility, { passive: true });
+    window.addEventListener('resize', scheduleAnchorFocusVisibility);
+    restoreAnchorFromHash();
+    window.addEventListener('hashchange', restoreAnchorFromHash);
+
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (!link || link.getAttribute('href') === '#') return;
+      var hash = link.getAttribute('href');
+      var target = document.querySelector(hash);
+      if (!target) return;
+      event.preventDefault();
+      smoothTo(target, hash);
+    }, true);
+  })();
+</script>
+</body>
 </html>
 
 

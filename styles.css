@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --background: #111213;
   --foreground: #e3e5e7;
   --card: #17181a;
@@ -1384,3 +1384,1601 @@ p {
 
 
 
+
+/* Preview optimization: information clarity without redesign */
+.network-map {
+  position: relative;
+  min-height: 34rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse at 20% 32%, rgba(206, 209, 213, 0.12) 0 9%, transparent 10%),
+    radial-gradient(ellipse at 36% 46%, rgba(206, 209, 213, 0.1) 0 12%, transparent 13%),
+    radial-gradient(ellipse at 52% 35%, rgba(206, 209, 213, 0.13) 0 14%, transparent 15%),
+    radial-gradient(ellipse at 68% 47%, rgba(206, 209, 213, 0.12) 0 13%, transparent 14%),
+    radial-gradient(ellipse at 82% 62%, rgba(206, 209, 213, 0.08) 0 8%, transparent 9%),
+    linear-gradient(135deg, rgba(23, 24, 26, 0.92), rgba(12, 13, 14, 0.96));
+}
+
+.network-map::before {
+  content: "";
+  position: absolute;
+  inset: 2rem;
+  opacity: 0.22;
+  background-image: linear-gradient(rgba(206, 209, 213, 0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(206, 209, 213, 0.14) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  mask-image: radial-gradient(ellipse at center, black 0 58%, transparent 76%);
+}
+
+.map-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 44%, rgba(206, 209, 213, 0.14), transparent 28%), radial-gradient(circle at 25% 52%, rgba(206, 209, 213, 0.1), transparent 24%);
+}
+
+.map-dot {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(227, 229, 231, 0.82);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.map-dot i {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--platinum);
+  box-shadow: 0 0 0 0.45rem rgba(206, 209, 213, 0.08), 0 0 1.4rem rgba(206, 209, 213, 0.55);
+}
+
+.map-dot.taiwan { left: 73%; top: 47%; }
+.map-dot.tokyo { left: 78%; top: 39%; }
+.map-dot.osaka { left: 76%; top: 43%; }
+.map-dot.bangkok { left: 66%; top: 57%; }
+.map-dot.singapore { left: 68%; top: 67%; }
+.map-dot.dubai { left: 53%; top: 51%; }
+.map-dot.london { left: 42%; top: 35%; }
+
+.flow-grid,
+.advantage-grid,
+.request-grid {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+
+.flow-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.advantage-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.request-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.flow-grid article,
+.advantage-grid article,
+.request-grid article {
+  background: rgba(23, 24, 26, 0.88);
+  padding: 2rem;
+}
+
+.flow-grid article {
+  min-height: 16rem;
+  position: relative;
+}
+
+.flow-grid article:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.8rem;
+  z-index: 2;
+  width: 1.6rem;
+  height: 1px;
+  background: var(--platinum-muted);
+  opacity: 0.42;
+}
+
+.flow-grid article > span,
+.advantage-grid i {
+  color: var(--platinum-muted);
+  font-size: 0.62rem;
+  font-style: normal;
+  letter-spacing: 0.32em;
+}
+
+.flow-grid h3,
+.advantage-grid h3 {
+  margin-top: 1.35rem;
+  font-size: 1.5rem;
+}
+
+.flow-grid small {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--platinum-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.flow-grid p {
+  margin-top: 1.2rem;
+}
+
+.advantage-grid article {
+  min-height: 13rem;
+}
+
+.advantage-grid i {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid rgba(206, 209, 213, 0.24);
+  letter-spacing: 0.08em;
+}
+
+.advantage-grid span {
+  display: block;
+  margin-top: 0.85rem;
+  color: var(--muted-foreground);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+}
+
+.request-grid article {
+  min-height: 8.5rem;
+  display: flex;
+  align-items: flex-end;
+  color: var(--foreground);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.story-grid .lead {
+  color: var(--foreground);
+}
+
+@media (max-width: 1023px) {
+  .flow-grid,
+  .advantage-grid,
+  .request-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .flow-grid article:not(:last-child)::after {
+    display: none;
+  }
+
+  .network-map {
+    min-height: 30rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .network-map {
+    min-height: 28rem;
+  }
+
+  .map-dot {
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+  }
+
+  .map-dot.taiwan { left: 67%; top: 47%; }
+  .map-dot.tokyo { left: 70%; top: 38%; }
+  .map-dot.osaka { left: 68%; top: 42%; }
+  .map-dot.bangkok { left: 55%; top: 57%; }
+  .map-dot.singapore { left: 58%; top: 67%; }
+  .map-dot.dubai { left: 39%; top: 51%; }
+  .map-dot.london { left: 22%; top: 35%; }
+
+  .flow-grid,
+  .advantage-grid,
+  .request-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-grid article,
+  .advantage-grid article,
+  .request-grid article {
+    min-height: auto;
+    padding: 1.65rem;
+  }
+
+  .request-grid article {
+    font-size: 1.18rem;
+  }
+}
+
+/* Preview refinement pass: compact service + quiet sections */
+#aviation,
+#yacht,
+#chauffeur {
+  display: none !important;
+}
+
+#services .service-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#services .service-card > div {
+  padding: 1.55rem;
+}
+
+#services .service-card p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+#services .service-link {
+  margin-top: 1.15rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+}
+
+.image-focus-helicopter {
+  object-position: 50% 48%;
+}
+
+.compact-section.section {
+  padding-block: 5.25rem;
+}
+
+.compact-head {
+  margin-bottom: 2.5rem;
+}
+
+.compact-head h2,
+.compact-center-head h2 {
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+}
+
+.compact-center-head {
+  margin-bottom: 2.5rem;
+}
+
+.flow-grid article,
+.advantage-grid article,
+.request-grid article {
+  padding: 1.35rem 1.45rem;
+}
+
+.flow-grid article {
+  min-height: 10.6rem;
+}
+
+.flow-grid h3,
+.advantage-grid h3 {
+  margin-top: 0.95rem;
+  font-size: 1.22rem;
+}
+
+.flow-grid small {
+  margin-top: 0.25rem;
+  font-size: 0.56rem;
+}
+
+.flow-grid p {
+  margin-top: 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.advantage-grid article {
+  min-height: 9.2rem;
+}
+
+.advantage-grid i {
+  width: 1.85rem;
+  height: 1.85rem;
+  font-size: 0.56rem;
+}
+
+.advantage-grid span {
+  margin-top: 0.55rem;
+  font-size: 0.68rem;
+}
+
+.request-grid article {
+  min-height: 5.8rem;
+  padding: 1.35rem 1.45rem;
+  font-size: 1.05rem;
+}
+
+#different {
+  display: none !important;
+}
+
+#membership.section {
+  padding-block: 5.25rem;
+}
+
+#membership .center-head {
+  margin-bottom: 2.25rem;
+}
+
+#membership .center-head h2 {
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+}
+
+#membership .center-head p {
+  max-width: 30rem;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+}
+
+#membership .membership-grid.single {
+  max-width: 52rem;
+}
+
+#membership .membership-card {
+  padding: 2rem;
+}
+
+#membership .membership-title h3 {
+  font-size: 1.75rem;
+}
+
+#membership .membership-card p {
+  font-size: 0.82rem;
+  line-height: 1.72;
+}
+
+#membership .compact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.35rem;
+}
+
+#membership .compact-list li {
+  margin-top: 0;
+  font-size: 0.78rem;
+}
+
+#membership .membership-card .button {
+  margin-top: 1.65rem;
+}
+
+@media (max-width: 1023px) {
+  #services .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  #services .service-grid,
+  #membership .compact-list {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-section.section,
+  #membership.section {
+    padding-block: 4rem;
+  }
+
+  .flow-grid article,
+  .advantage-grid article,
+  .request-grid article {
+    padding: 1.2rem;
+  }
+}
+
+/* Requested refinement: map silhouette, Chinese services, compact mobile flow */
+.world-map-svg {
+  position: absolute;
+  inset: 9% 5%;
+  width: 90%;
+  height: 82%;
+  z-index: 1;
+  fill: rgba(206, 209, 213, 0.13);
+  stroke: rgba(206, 209, 213, 0.18);
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 18px rgba(206, 209, 213, 0.07));
+}
+
+.network-map .map-glow,
+.network-map .map-dot {
+  z-index: 2;
+}
+
+.network-map::before {
+  z-index: 0;
+}
+
+#typical-requests,
+#different {
+  display: none !important;
+}
+
+#about .eyebrow {
+  color: var(--platinum-muted);
+}
+
+#services .service-card h3 {
+  font-family: var(--font-heading);
+}
+
+#services .service-card-helicopter img {
+  background: #111213;
+}
+
+@media (max-width: 639px) {
+  #how-it-works.compact-section.section {
+    padding-block: 3.4rem;
+  }
+
+  #how-it-works .compact-head {
+    margin-bottom: 1.6rem;
+  }
+
+  #how-it-works .compact-head h2 {
+    font-size: clamp(1.62rem, 8vw, 2.05rem);
+  }
+
+  #how-it-works .compact-head p {
+    font-size: 0.78rem;
+    line-height: 1.65;
+  }
+
+  #how-it-works .flow-grid article {
+    padding: 0.95rem 1rem;
+    min-height: auto;
+  }
+
+  #how-it-works .flow-grid h3 {
+    margin-top: 0.6rem;
+    font-size: 1.05rem;
+  }
+
+  #how-it-works .flow-grid small {
+    margin-top: 0.16rem;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+  }
+
+  #how-it-works .flow-grid p {
+    margin-top: 0.55rem;
+    font-size: 0.72rem;
+    line-height: 1.55;
+  }
+
+  #why-chase.compact-section.section {
+    padding-block: 3.6rem;
+  }
+
+  #why-chase .advantage-grid article {
+    padding: 1rem;
+  }
+
+  .network-map {
+    min-height: 25rem;
+  }
+
+  .world-map-svg {
+    inset: 12% 3%;
+    width: 94%;
+    height: 76%;
+  }
+}
+
+/* Correction pass: keep official style, remove excess CTAs, use actual world map base */
+#why-chase,
+#typical-requests,
+#different {
+  display: none !important;
+}
+
+#services .service-link {
+  display: none !important;
+}
+
+.network-map {
+  background:
+    linear-gradient(rgba(17, 18, 19, 0.68), rgba(17, 18, 19, 0.78)),
+    url("https://upload.wikimedia.org/wikipedia/commons/8/83/Equirectangular_projection_SW.jpg") center / cover no-repeat,
+    linear-gradient(135deg, rgba(23, 24, 26, 0.96), rgba(8, 9, 10, 0.98)) !important;
+}
+
+.network-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at 63% 47%, rgba(206, 209, 213, 0.16), transparent 24%), linear-gradient(to bottom, rgba(17, 18, 19, 0.18), rgba(17, 18, 19, 0.45));
+  pointer-events: none;
+}
+
+.world-map-svg {
+  display: none !important;
+}
+
+.network-map .map-glow,
+.network-map .map-dot {
+  z-index: 3;
+}
+
+#how-it-works + #why-chase {
+  display: none !important;
+}
+
+@media (max-width: 639px) {
+  .network-map {
+    min-height: 23rem;
+    background-size: auto 100%, cover, cover !important;
+  }
+}
+
+/* Final map correction: use built-in continent SVG, no external map dependency */
+.network-map {
+  background: linear-gradient(135deg, rgba(23, 24, 26, 0.96), rgba(8, 9, 10, 0.98)) !important;
+}
+
+.world-map-svg {
+  display: block !important;
+  position: absolute;
+  inset: 8% 4%;
+  width: 92%;
+  height: 84%;
+  z-index: 1;
+  filter: drop-shadow(0 0 22px rgba(206, 209, 213, 0.08));
+}
+
+.world-map-svg .continent path {
+  fill: rgba(206, 209, 213, 0.18);
+  stroke: rgba(206, 209, 213, 0.2);
+  stroke-width: 1.4;
+}
+
+.world-map-svg .map-lines path {
+  fill: none;
+  stroke: rgba(206, 209, 213, 0.08);
+  stroke-width: 1;
+}
+
+.network-map::after {
+  z-index: 2;
+}
+
+.network-map .map-dot,
+.network-map .map-glow {
+  z-index: 4;
+}
+
+/* Hard fix: local map image and local helicopter asset */
+.network-map {
+  min-height: 34rem;
+  background: #111213 !important;
+}
+
+.world-map-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.92;
+}
+
+.world-map-svg {
+  display: none !important;
+}
+
+.network-map::after {
+  content: none !important;
+}
+
+.network-map::before {
+  opacity: 0 !important;
+}
+
+.network-map .map-dot,
+.network-map .map-glow {
+  z-index: 3;
+}
+
+.service-card-helicopter img {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 639px) {
+  .network-map {
+    min-height: 22.5rem;
+  }
+
+  .world-map-image {
+    object-fit: contain;
+  }
+}
+
+/* Final visible inline map and helicopter fix */
+.coverage-map-inline {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.coverage-map-inline .continents path {
+  fill: rgba(206, 209, 213, 0.16);
+  stroke: rgba(206, 209, 213, 0.22);
+  stroke-width: 1.2;
+}
+
+.coverage-map-inline .map-grid path {
+  fill: none;
+  stroke: rgba(206, 209, 213, 0.08);
+  stroke-width: 1;
+}
+
+.coverage-map-inline .map-points circle:first-child {
+  fill: rgba(227, 229, 231, 0.15);
+  filter: drop-shadow(0 0 10px rgba(227, 229, 231, 0.65));
+}
+
+.coverage-map-inline .map-points .core {
+  fill: #e8ebee;
+}
+
+.network-map .map-dot,
+.network-map .map-glow,
+.world-map-image,
+.world-map-svg {
+  display: none !important;
+}
+
+.helicopter-inline,
+.helicopter-inline svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.helicopter-inline svg {
+  object-fit: cover;
+}
+
+.service-card-helicopter figure > span {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 2;
+}
+
+/* final.html static preview hard styles */
+.final-map {
+  position: relative;
+  min-height: 34rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #111213;
+}
+
+.coverage-map-inline,
+.helicopter-inline svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.coverage-map-inline {
+  position: absolute;
+  inset: 0;
+}
+
+.coverage-map-inline .continents path {
+  fill: rgba(206, 209, 213, 0.16);
+  stroke: rgba(206, 209, 213, 0.22);
+  stroke-width: 1.2;
+}
+
+.coverage-map-inline .map-grid path {
+  fill: none;
+  stroke: rgba(206, 209, 213, 0.08);
+  stroke-width: 1;
+}
+
+.coverage-map-inline .map-points circle:first-child {
+  fill: rgba(227, 229, 231, 0.15);
+  filter: drop-shadow(0 0 10px rgba(227, 229, 231, 0.65));
+}
+
+.coverage-map-inline .map-points .core {
+  fill: #e8ebee;
+}
+
+.network-list {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem 2rem;
+}
+
+.network-list span {
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+}
+
+.final-service-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.final-service-grid .service-link {
+  display: none !important;
+}
+
+.helicopter-inline {
+  position: absolute;
+  inset: 0;
+  background: #111213;
+}
+
+.service-card-helicopter figure > span {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 2;
+}
+
+@media (max-width: 1023px) {
+  .final-service-grid,
+  .network-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .final-map {
+    min-height: 22rem;
+  }
+
+  .final-service-grid,
+  .network-list {
+    grid-template-columns: 1fr;
+  }
+
+  .network-list span {
+    font-size: 0.68rem;
+  }
+}
+
+/* Use user-provided final assets */
+.final-map {
+  min-height: 34rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: #111213 !important;
+}
+
+.coverage-reference-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.82;
+  filter: grayscale(1) brightness(0.72) contrast(1.08);
+}
+
+.final-service-grid .image-focus-helicopter {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(0.52) saturate(0.86) brightness(0.9);
+  transition: filter 760ms cubic-bezier(0.22, 1, 0.36, 1), scale 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.final-service-grid .service-card:hover .image-focus-helicopter {
+  filter: grayscale(0.08) saturate(1.02) brightness(1);
+  scale: 1.04;
+}
+
+@media (max-width: 639px) {
+  .final-map {
+    min-height: 18rem;
+  }
+
+  .coverage-reference-image {
+    object-fit: cover;
+  }
+}
+
+/* Final tuning: clearer map, balanced mobile country list */
+.coverage-reference-image {
+  opacity: 1 !important;
+  filter: grayscale(1) brightness(0.98) contrast(1.08) !important;
+}
+
+.final-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(17, 18, 19, 0.08), rgba(17, 18, 19, 0.16));
+}
+
+.network-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1rem 2.25rem;
+}
+
+.network-list span {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.network-list span::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: rgba(206, 209, 213, 0.5);
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1023px) {
+  .network-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .final-map {
+    min-height: 20rem !important;
+  }
+
+  .coverage-reference-image {
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(1) brightness(1.04) contrast(1.08) !important;
+  }
+
+  .network-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.9rem 1.1rem;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+  }
+
+  .network-list span {
+    gap: 0.65rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+  }
+
+  .network-list span::before {
+    width: 0.35rem;
+    height: 0.35rem;
+  }
+}/* Taiwan live service point v11 */
+.final-map .map-live-dot {
+  position: absolute;
+  left: 82.8%;
+  top: 42.4%;
+  z-index: 5;
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 999px;
+  background: rgba(232, 235, 238, 0.9);
+  box-shadow: 0 0 0 0.28rem rgba(232, 235, 238, 0.1), 0 0 1.05rem rgba(232, 235, 238, 0.52);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.final-map.is-taiwan-active .taiwan-live-dot {
+  background: rgba(224, 207, 174, 0.98);
+  box-shadow: 0 0 0 0.32rem rgba(224, 207, 174, 0.16), 0 0 1.45rem rgba(224, 207, 174, 0.72);
+  animation: chaseTaiwanPulse 3.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes chaseTaiwanPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0.78;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.24);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 639px) {
+  .final-map .map-live-dot {
+    left: 82.7%;
+    top: 42.6%;
+    width: 0.48rem;
+    height: 0.48rem;
+  }
+}
+/* End Taiwan live service point v11 *//* High resolution network map v13 */
+.final-map {
+  min-height: 33rem !important;
+  background: #111213 !important;
+}
+
+.coverage-reference-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.final-map .map-live-dot {
+  left: 72.7% !important;
+  top: 38.3% !important;
+  opacity: 0;
+  width: 0.58rem;
+  height: 0.58rem;
+  background: rgba(224, 207, 174, 0.98);
+  box-shadow: 0 0 0 0.32rem rgba(224, 207, 174, 0.14), 0 0 1.45rem rgba(224, 207, 174, 0.62);
+}
+
+.final-map.is-taiwan-active .taiwan-live-dot {
+  opacity: 1;
+  animation: chaseTaiwanPulse 3.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@media (max-width: 639px) {
+  .final-map {
+    min-height: 18.5rem !important;
+  }
+
+  .coverage-reference-image {
+    object-fit: contain !important;
+  }
+
+  .final-map .map-live-dot {
+    left: 72.8% !important;
+    top: 38.6% !important;
+    width: 0.46rem;
+    height: 0.46rem;
+  }
+}
+/* End high resolution network map v13 *//* V2 map clarity v14 */
+.final-map {
+  background: #121314 !important;
+  border-color: rgba(206, 209, 213, 0.22) !important;
+}
+
+.coverage-reference-image {
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.final-map::after {
+  background: linear-gradient(to bottom, rgba(17, 18, 19, 0.02), rgba(17, 18, 19, 0.08)) !important;
+}
+
+.final-map .map-live-dot {
+  left: 72.7% !important;
+  top: 41.6% !important;
+  opacity: 0;
+}
+
+@media (max-width: 639px) {
+  .final-map {
+    min-height: 19rem !important;
+  }
+
+  .final-map .map-live-dot {
+    left: 72.8% !important;
+    top: 41.8% !important;
+  }
+}
+/* End V2 map clarity v14 *//* V2 compact stable map v17 */
+#global-network .section-head {
+  margin-bottom: 2.75rem !important;
+}
+
+.final-map {
+  width: min(100%, 58rem) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  aspect-ratio: 1400 / 760 !important;
+  margin-inline: auto !important;
+  background: #121314 !important;
+  border-color: rgba(206, 209, 213, 0.2) !important;
+}
+
+.coverage-reference-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.final-map::after {
+  background: linear-gradient(to bottom, rgba(17, 18, 19, 0.01), rgba(17, 18, 19, 0.06)) !important;
+}
+
+.network-list {
+  max-width: 58rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 639px) {
+  #global-network .section-head {
+    margin-bottom: 2rem !important;
+  }
+
+  .final-map {
+    width: 100% !important;
+    aspect-ratio: 1400 / 760 !important;
+    min-height: 0 !important;
+    max-height: 15.5rem !important;
+  }
+
+  .network-list {
+    margin-top: 1.25rem !important;
+    padding-top: 1.15rem !important;
+  }
+}
+/* End V2 compact stable map v17 *//* V2 final compact map override v18 */
+#global-network .final-map.network-map {
+  display: block !important;
+  width: min(100%, 860px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: 1400 / 760 !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  background: #121314 !important;
+}
+
+#global-network .final-map.network-map .coverage-reference-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 639px) {
+  #global-network .final-map.network-map {
+    width: 100% !important;
+    aspect-ratio: 1400 / 760 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+}
+/* End V2 final compact map override v18 *//* V2 emergency map revert v19 */
+#global-network .final-map.network-map {
+  display: block !important;
+  width: min(100%, 760px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 868 / 653 !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  background: #111213 !important;
+  border: 1px solid rgba(206, 209, 213, 0.2) !important;
+}
+
+#global-network .final-map.network-map .coverage-reference-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: grayscale(1) brightness(1.08) contrast(1.08) !important;
+  opacity: 1 !important;
+}
+
+#global-network .final-map.network-map::after {
+  background: none !important;
+}
+
+#global-network .final-map.network-map .map-live-dot {
+  display: none !important;
+}
+
+@media (max-width: 639px) {
+  #global-network .final-map.network-map {
+    width: 100% !important;
+    aspect-ratio: 868 / 653 !important;
+  }
+}
+/* End V2 emergency map revert v19 *//* V2 map frame align v20 */
+#global-network .final-map.network-map {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+#global-network .final-map.network-map::after {
+  display: none !important;
+}
+
+#global-network .final-map.network-map .coverage-reference-image {
+  border: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+/* End V2 map frame align v20 *//* V2 generated map asset v21 */
+#global-network .final-map.network-map {
+  position: relative !important;
+  display: block !important;
+  width: min(100%, 760px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+#global-network .final-map.network-map::after {
+  display: none !important;
+  content: none !important;
+}
+
+#global-network .final-map.network-map .coverage-reference-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: unset !important;
+  object-position: center !important;
+  filter: none !important;
+  opacity: 1 !important;
+  border: 0 !important;
+}
+
+#global-network .final-map.network-map .map-live-dot {
+  display: block !important;
+  position: absolute !important;
+  left: 77.6% !important;
+  top: 48.2% !important;
+  z-index: 3 !important;
+  width: 0.48rem !important;
+  height: 0.48rem !important;
+  border-radius: 999px !important;
+  background: rgba(232, 221, 198, 0.98) !important;
+  opacity: 0.95 !important;
+  transform: translate(-50%, -50%) !important;
+  box-shadow: 0 0 0 0.28rem rgba(232, 221, 198, 0.14), 0 0 1.15rem rgba(232, 221, 198, 0.74) !important;
+  animation: chaseTaiwanPulse 3.8s cubic-bezier(0.22, 1, 0.36, 1) infinite !important;
+  pointer-events: none !important;
+}
+
+.network-list {
+  max-width: 760px !important;
+}
+
+@media (max-width: 639px) {
+  #global-network .final-map.network-map {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  #global-network .final-map.network-map .map-live-dot {
+    width: 0.42rem !important;
+    height: 0.42rem !important;
+  }
+}
+/* End V2 generated map asset v21 *//* V2 mobile center image color v22 */
+@media (max-width: 639px) {
+  .final-service-grid .service-card.is-mobile-focus img,
+  .final-service-grid .service-card.is-mobile-focus .image-focus-helicopter {
+    filter: grayscale(0.04) saturate(1.03) brightness(1) !important;
+    scale: 1.035;
+  }
+}
+/* End V2 mobile center image color v22 *//* V2 map breathing light v23 */
+#global-network .final-map.network-map .map-live-dot {
+  animation: chaseMapBreathCore 3.8s cubic-bezier(0.22, 1, 0.36, 1) infinite !important;
+}
+
+#global-network .final-map.network-map .map-live-dot::after {
+  content: "";
+  position: absolute;
+  inset: -0.42rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 221, 198, 0.34);
+  box-shadow: 0 0 1.2rem rgba(232, 221, 198, 0.42);
+  transform: scale(0.68);
+  opacity: 0.22;
+  animation: chaseMapBreathRing 3.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes chaseMapBreathCore {
+  0%, 100% {
+    box-shadow: 0 0 0 0.18rem rgba(232, 221, 198, 0.1), 0 0 0.85rem rgba(232, 221, 198, 0.48);
+  }
+  50% {
+    box-shadow: 0 0 0 0.34rem rgba(232, 221, 198, 0.2), 0 0 1.45rem rgba(232, 221, 198, 0.82);
+  }
+}
+
+@keyframes chaseMapBreathRing {
+  0%, 100% {
+    transform: scale(0.7);
+    opacity: 0.16;
+  }
+  50% {
+    transform: scale(1.48);
+    opacity: 0.62;
+  }
+}
+/* End V2 map breathing light v23 */
+
+/* GitHub x V2 official refinements */
+/* CHASE GitHub x V2 preview only. Does not affect final.html or root GitHub version. */
+
+body.github-v2-preview {
+  scroll-padding-top: 7.25rem;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body.github-v2-preview .reveal,
+body.github-v2-preview .service-card,
+body.github-v2-preview .coverage-reference-image,
+body.github-v2-preview .form-modal-panel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+body.github-v2-preview .service-card img,
+body.github-v2-preview .coverage-reference-image {
+  will-change: transform, filter;
+}
+
+body.github-v2-preview .site-header,
+body.github-v2-preview .mobile-menu {
+  will-change: transform, background, opacity;
+}
+body.github-v2-preview main {
+  display: flex;
+  flex-direction: column;
+}
+
+body.github-v2-preview #top { order: 1; }
+body.github-v2-preview #about { order: 2; }
+body.github-v2-preview #services { order: 3; }
+body.github-v2-preview #global-network { order: 4; }
+body.github-v2-preview #membership { order: 5; }
+body.github-v2-preview #faq { order: 6; }
+body.github-v2-preview #contact { order: 7; }
+
+body.github-v2-preview .hero-content p {
+  max-width: 38rem;
+  color: rgba(232, 235, 238, 0.8);
+}
+
+body.github-v2-preview #about {
+  padding-bottom: 5.25rem;
+}
+
+body.github-v2-preview #services {
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.004));
+  border-top: 1px solid rgba(206, 209, 213, 0.08);
+  border-bottom: 1px solid rgba(206, 209, 213, 0.08);
+}
+
+body.github-v2-preview #services .section-head {
+  margin-bottom: 3rem;
+}
+
+body.github-v2-preview #services .section-head p {
+  max-width: 27rem;
+}
+
+body.github-v2-preview .final-service-grid {
+  gap: 1px;
+  background: rgba(206, 209, 213, 0.1);
+  border: 1px solid rgba(206, 209, 213, 0.1);
+}
+
+body.github-v2-preview .final-service-grid .service-card {
+  background: #131415;
+}
+
+body.github-v2-preview .final-service-grid .service-card figure {
+  aspect-ratio: 4 / 4.6;
+}
+
+body.github-v2-preview .final-service-grid .service-card > div {
+  padding: 1.45rem;
+}
+
+body.github-v2-preview .final-service-grid .service-card p {
+  font-size: 0.8rem;
+  line-height: 1.86;
+}
+
+
+
+body.github-v2-preview .final-service-grid .service-card[id] {
+  position: relative;
+  scroll-margin-top: 7.25rem;
+}
+
+body.github-v2-preview .final-service-grid .service-card[id]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  border: 1px solid rgba(214, 181, 116, 0);
+  box-shadow: none;
+  transition: border-color 260ms ease, box-shadow 260ms ease;
+}
+
+body.github-v2-preview .final-service-grid .service-card[id]:target {
+  box-shadow: 0 0 34px rgba(214, 181, 116, 0.08);
+}
+
+body.github-v2-preview .final-service-grid .service-card[id]:target::before {
+  border-color: rgba(214, 181, 116, 0.56);
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.16), 0 0 30px rgba(214, 181, 116, 0.12);
+}
+
+body.github-v2-preview .final-service-grid .service-card[id]:target figure::after {
+  opacity: 0.16;
+}
+
+body.github-v2-preview .final-service-grid #service-aviation:target + #helicopter {
+  position: relative;
+  box-shadow: 0 0 26px rgba(214, 181, 116, 0.06);
+}
+
+body.github-v2-preview .final-service-grid #service-aviation:target + #helicopter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  border: 1px solid rgba(214, 181, 116, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.12), 0 0 24px rgba(214, 181, 116, 0.08);
+}
+
+body.github-v2-preview .final-service-grid #service-aviation:target + #helicopter figure::after {
+  opacity: 0.13;
+}
+body.github-v2-preview #global-network {
+  background: var(--background);
+}
+
+body.github-v2-preview #global-network .section-head {
+  margin-bottom: 2.8rem;
+}
+
+body.github-v2-preview #global-network .final-map.network-map {
+  width: min(100%, 720px) !important;
+}
+
+body.github-v2-preview .network-list {
+  max-width: 720px !important;
+}
+
+body.github-v2-preview #membership {
+  background: linear-gradient(180deg, rgba(255,255,255,0.008), rgba(255,255,255,0.016));
+}
+
+body.github-v2-preview #membership .center-head {
+  margin-bottom: 2.6rem;
+}
+
+body.github-v2-preview #membership .membership-grid.single {
+  max-width: 42rem;
+}
+
+body.github-v2-preview #faq .section-head {
+  margin-bottom: 2.4rem;
+}
+
+body.github-v2-preview #contact {
+  padding-top: 6rem;
+}
+
+@media (max-width: 1023px) {
+  body.github-v2-preview .final-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  body.github-v2-preview #about {
+    padding-bottom: 4rem;
+  }
+
+  body.github-v2-preview #services .section-head {
+    margin-bottom: 2.25rem;
+  }
+
+  body.github-v2-preview .final-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.github-v2-preview .final-service-grid .service-card figure {
+    aspect-ratio: 16 / 11;
+  }
+
+  body.github-v2-preview #global-network .final-map.network-map {
+    width: 100% !important;
+  }
+}
+/* Hybrid anchor focus reliability v7 */
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target,
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related {
+  position: relative;
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target {
+  box-shadow: 0 0 34px rgba(214, 181, 116, 0.1);
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target::before {
+  border-color: rgba(214, 181, 116, 0.66);
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.2), 0 0 34px rgba(214, 181, 116, 0.16);
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target figure::after {
+  opacity: 0.18;
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related {
+  box-shadow: 0 0 24px rgba(214, 181, 116, 0.07);
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related::before {
+  border-color: rgba(214, 181, 116, 0.44);
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.12), 0 0 22px rgba(214, 181, 116, 0.08);
+}
+/* Hybrid anchor focus image color v8 */
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target::before {
+  inset: -1px;
+  border-color: rgba(214, 181, 116, 0.74);
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.24), 0 0 36px rgba(214, 181, 116, 0.18);
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target img,
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target .image-focus-helicopter {
+  filter: grayscale(0.02) saturate(1.06) brightness(1.02) !important;
+  scale: 1.035;
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target figure::after {
+  opacity: 0.06;
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related::before {
+  inset: -1px;
+  border-color: rgba(214, 181, 116, 0.42);
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related figure::after {
+  opacity: 0.14;
+}
+/* End hybrid anchor focus image color v8 */
+/* Mobile anchor frame clarity v9 */
+@media (max-width: 639px) {
+  body.github-v2-preview .final-service-grid .service-card.is-anchor-target::before {
+    inset: -2px;
+    border-color: rgba(214, 181, 116, 0.9);
+    box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.3), 0 0 28px rgba(214, 181, 116, 0.18);
+  }
+
+  body.github-v2-preview .final-service-grid .service-card.is-anchor-target {
+    box-shadow: 0 0 30px rgba(214, 181, 116, 0.12);
+  }
+}
+/* End mobile anchor frame clarity v9 */
+/* Aviation related card color v10 */
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related img,
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related .image-focus-helicopter {
+  filter: grayscale(0.08) saturate(1.02) brightness(1) !important;
+  scale: 1.025;
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related figure::after {
+  opacity: 0.08;
+}
+/* End aviation related card color v10 */
+/* Visible service focus frame v11 */
+body.github-v2-preview .final-service-grid .service-card.is-anchor-target {
+  outline: 1px solid rgba(214, 181, 116, 0.78);
+  outline-offset: -1px;
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.18), 0 0 34px rgba(214, 181, 116, 0.14);
+}
+
+body.github-v2-preview .final-service-grid .service-card.is-anchor-related {
+  outline: 1px solid rgba(214, 181, 116, 0.48);
+  outline-offset: -1px;
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.1), 0 0 22px rgba(214, 181, 116, 0.08);
+}
+
+@media (max-width: 639px) {
+  body.github-v2-preview .final-service-grid .service-card.is-anchor-target {
+    outline-color: rgba(214, 181, 116, 0.92);
+    box-shadow: inset 0 0 0 1px rgba(214, 181, 116, 0.28), 0 0 26px rgba(214, 181, 116, 0.16);
+  }
+}
+/* End visible service focus frame v11 */
+/* Global privilege anchor and mobile fit v24 */
+body.github-v2-preview #global-network .section-head {
+  scroll-margin-top: 5.25rem;
+}
+
+@media (max-width: 639px) {
+  body.github-v2-preview #global-network {
+    padding-top: 4.7rem;
+  }
+
+  body.github-v2-preview #global-network .section-head {
+    margin-bottom: 1.15rem !important;
+    gap: 0.85rem;
+    scroll-margin-top: 4.45rem;
+  }
+
+  body.github-v2-preview #global-network .section-head p {
+    max-width: 100%;
+    font-size: 0.86rem;
+    line-height: 1.85;
+  }
+
+  body.github-v2-preview #global-network .final-map.network-map {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body.github-v2-preview #global-network .network-list {
+    margin-top: 0.9rem !important;
+    padding-top: 0.85rem !important;
+    gap: 0.58rem 0.75rem !important;
+  }
+
+  body.github-v2-preview #global-network .network-list span {
+    gap: 0.52rem !important;
+    font-size: 0.52rem !important;
+    letter-spacing: 0.13em !important;
+  }
+}
+/* End global privilege anchor and mobile fit v24 */
